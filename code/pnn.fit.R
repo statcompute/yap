@@ -1,3 +1,11 @@
+#' Fit a pnn.
+#' 
+#' @param x A matrix of predictors
+#' @param y A N-category vector
+#' @param sigma A scalar with the positive value
+#' @return A pnn
+#' @examples
+#' pnn.fit(x, y)
 pnn.fit <- function(x, y, sigma = 1) {
   ### CHECK X MATRIX ###
   if (is.matrix(x) == F) stop("x needs to be a matrix.", call. = F)
