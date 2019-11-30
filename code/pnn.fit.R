@@ -11,7 +11,7 @@ pnn.fit <- function(x, y, sigma = 1) {
 
   pn <- structure(list(), class = "Probabilistic Neural Net")
   pn$x <- x
-  pn$y <- y
+  pn$y.raw <- y
   pn$y.ind <- dummies(y)
   pn$sigma <- sigma
   return(pn)
