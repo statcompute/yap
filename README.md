@@ -4,3 +4,7 @@
 
 ### <p align="center"> Yet Another Probabilistic (YAP) </p>
 ### <p align="center">  Neural Network </p>
+
+#### Introduction
+
+The YAP package is another implementation of [Probabilistic Neural Networks (Specht, 1990)](http://courses.cs.tamu.edu/rgutier/cpsc636_s10/specht1990pnn.pdf). 
