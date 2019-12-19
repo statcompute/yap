@@ -7,4 +7,4 @@
 
 #### Introduction
 
-The YAP package is another implementation of [Probabilistic Neural Networks (Specht, 1990)](http://courses.cs.tamu.edu/rgutier/cpsc636_s10/specht1990pnn.pdf). 
+YAP is a R package implementing [Probabilistic Neural Networks (Specht, 1990)](http://courses.cs.tamu.edu/rgutier/cpsc636_s10/specht1990pnn.pdf). 
