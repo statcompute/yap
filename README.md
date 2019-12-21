@@ -10,3 +10,6 @@
 YAP is a R package implementing [Probabilistic Neural Networks (Specht, 1990)](http://courses.cs.tamu.edu/rgutier/cpsc636_s10/specht1990pnn.pdf) that can be employed in N-category pattern recognitions with N > 2.
 
 Similar to General Regression Neural Networks (GRNN), PNN shares same benefits of instantaneous training, simple structure, and global convergence. 
+
+#### Package Dependencies
+R version 3.6, base, stats, parallel, randtoolbox, lhs
