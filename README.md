@@ -13,3 +13,11 @@ Similar to General Regression Neural Networks (GRNN), PNN shares same benefits o
 
 #### Package Dependencies
 R version 3.6, base, stats, parallel, randtoolbox, and lhs
+
+#### Installation
+
+Download the [yap_0.1.0.tar.gz](https://github.com/statcompute/yap/blob/master/yap_0.1.0.tar.gz) file, save it in your working directory, and then install the package as below.
+
+```r
+install.packages("yap_0.1.0.tar.gz", repos = NULL, type = "source")
+```
