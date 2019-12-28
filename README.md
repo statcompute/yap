@@ -21,3 +21,36 @@ Download the [yap_0.1.0.tar.gz](https://github.com/statcompute/yap/blob/master/y
 ```r
 install.packages("yap_0.1.0.tar.gz", repos = NULL, type = "source")
 ```
+
+#### Functions
+
+```txt
+YAP 
+  |
+  |-- Utility Functions
+  |     |-- dummies(x)
+  |     |-- folds(idx, n, seed = 1)
+  |     |-- logl(y_true, y_pred)
+  |     |-- gen_unifm(min = 0, max = 1, n, seed = 1)
+  |     |-- gen_sobol(min = 0, max = 1, n, seed = 1)   
+  |     `-- gen_latin(min = 0, max = 1, n, seed = 1) 
+  |
+  |-- Training
+  |     `-- pnn.fit(x, y, sigma = 1) 
+  |
+  |-- Prediction
+  |     |-- pnn.predone(net, x) 
+  |     |-- pnn.predict(net, x)  
+  |     `-- pnn.parpred(net, x)  
+  |
+  |-- Parameter Tuning
+  |     |-- pnn.search_logl(net, sigmas, nfolds = 4, seed = 1) 
+  |     `-- pnn.optmiz_logl(net, lower = 0, upper, nfolds = 4, seed = 1, method = 1)
+  |
+  `-- Variable Importance
+        |-- pnn.x_imp(net, i) 
+        |-- pnn.imp(net)
+        |-- pnn.x_pfi(net, i, ntry = 1e3, seed = 1)
+        `-- pnn.pfi(net, ntry = 1e3, seed = 1)
+  
+```
