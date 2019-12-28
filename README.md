@@ -54,3 +54,28 @@ YAP
         `-- pnn.pfi(net, ntry = 1e3, seed = 1)
   
 ```
+#### Example
+
+Below is a demonstration showing how to use the YAP package and a comparison between the multinomial regression and the PNN. As shown below, both approaches delivered very comparable predictive performance. In this particular example, PNN even performed slightly better in terms of the cross-entropy for a separate testing dataset. 
+
+```R
+data("Heating", package = "mlogit")
+Y <- Heating[, 2]
+X <- scale(Heating[, 3:15])
+idx <- with(set.seed(1), sample(seq(nrow(X)), nrow(X) / 2))
+ 
+### FIT A MULTINOMIAL REGRESSION AS A BENCHMARK ###
+m1 <- nnet::multinom(Y ~ ., data = data.frame(X, Y)[idx, ], model = TRUE)
+# cross-entropy for the testing set
+yap::logl(y_pred = predict(m1, newdata = X, type = "prob")[-idx, ], y_true = yap::dummies(Y)[-idx, ])
+# 1.182727
+ 
+### FIT A PNN ###
+n1 <- yap::pnn.fit(x = X[idx, ], y = Y[idx])
+parm <- yap::pnn.search_logl(n1, yap::gen_latin(1, 10, 20), nfolds = 5)
+n2 <- yap::pnn.fit(X[idx, ], Y[idx], sigma = parm$best$sigma)
+# cross-entropy for the testing set
+yap::logl(y_pred = yap::pnn.predict(n2, X)[-idx, ], y_true = yap::dummies(Y)[-idx, ])
+# 1.148456
+```
+
